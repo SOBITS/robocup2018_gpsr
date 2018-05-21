@@ -1,0 +1,18 @@
+/gpsr/pkg_name: 'gpsr'
+/gpsr/csv_filename: 'answer.csv'
+/gpsr/start_img_filename: 'key_trigger.JPG'
+/gpsr/key_trigger_img_path: '/home/sobit-x3/catkin_ws/src/gpsr/config/key_trigger.JPG'
+
+#各状態で処理を実行するか否か
+/gpsr/do_key_trigger: true
+/gpsr/do_door_open: false
+/gpsr/do_move: false
+/gpsr/do_find_person: false
+/gpsr/do_object_grasp: false
+/gpsr/do_follow_me: false
+/gpsr/do_answer: false
+/gpsr/do_report: true
+/gpsr/do_ask: true
+/gpsr/do_guide_announce: true
+/gpsr/do_put_object: false
+/gpsr/do_find_object: false

@@ -1,0 +1,42 @@
+<!--RoboCup 2018 GPSR-->
+<!--turtlebot_edu-->
+<launch>
+
+    <!-- Microsoft text to speech -->
+    <include file="$(find picotts)/launch/picotts.launch"/>
+    
+    <!-- google_speech_recognition -->
+    <include file="$(find google_speech_recognition)/launch/google_speech_recognition.launch" />
+    
+    <!-- xtion -->
+    <include file="$(find turtlebot_edu)/launch/3dsensor.launch"/>
+
+    <!-- urg -->
+    <include file="$(find turtlebot_edu)/launch/urg.launch"/>
+
+    <!-- dynamixel -->
+    <node pkg="turtlebot_edu" type="dynamixel_turtlebot_edu.py" name="turtlebot_edu_dynamixel_move" output="screen"/>
+
+    <!-- grasp_obj_frame (service) -->
+    <node pkg="turtlebot_edu" type="grasp_obj_by_frame_edu.py" name="grasp_obj_by_frame_edu" output="screen"> 
+		 <rosparam command="load" file="$(find turtlebot_edu)/param/grasp_obj_edu_param.yaml" /> 
+    </node> 
+
+
+    <!-- rviz -->
+    <!--<include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/> -->
+    
+    <!-- slam -->
+    <include file="$(find turtlebot_edu)/launch/slam.launch"/>
+	
+    <!-- main -->
+    <node pkg="gpsr" type="GPSR_edu.py" name="GPSR" output="screen">
+	<rosparam command="load" file="$(find gpsr)/config/paramater.yaml"/>
+    </node>
+
+    <!-- show state machine -->
+    <node pkg="smach_viewer" type="smach_viewer.py" name="smach_viewer" output="screen" launch-prefix="gnome-terminal -e"/>
+        
+    
+    
+</launch>

@@ -1,0 +1,47 @@
+<!--RoboCup 2018 GPSR-->
+<!--turtlebot_op-->
+<launch>
+
+    <!-- Microsoft text to speech -->
+    <include file="$(find picotts)/launch/picotts.launch"/>
+    
+    <!-- google_speech_recognition -->
+    <include file="$(find google_speech_recognition)/launch/google_speech_recognition.launch" />
+    
+    <!-- xtion -->
+    <include file="$(find turtlebot_op)/launch/3dsensor.launch"/>
+
+    <!-- urg -->
+    <include file="$(find turtlebot_op)/launch/urg.launch"/>
+
+    <!-- dynamixel -->
+    <node pkg="turtlebot_op" type="dynamixel_sobit.py" name="turtlebot_op_dynamixel_move" output="screen"/>
+
+    <!-- grasp_obj_frame (service) -->
+    <node pkg="turtlebot_op" type="grasp_obj_by_frame_op.py" name="grasp_obj_by_frame_op" output="screen"> 
+         <rosparam command="load" file="$(find turtlebot_op)/param/grasp_obj_op_param.yaml" /> 
+    </node> 
+    
+    <!-- put_motion -->
+    <node pkg="turtlebot_op" type="put_motion_op.py" name="put_motion" output="screen"/>
+
+    <!-- rviz -->
+    <!--<include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/> -->
+    
+    <!-- slam -->
+    <include file="$(find turtlebot_op)/launch/slam.launch"/>
+    
+    <!-- skyboimetry -->
+    <include file="$(find skybiometry_ros)/launch/skybiometry_ros.launch"/>
+	
+    <!-- main -->
+    <node pkg="gpsr" type="GPSR_op.py" name="GPSR" output="screen">
+	<rosparam command="load" file="$(find gpsr)/config/paramater.yaml"/>
+    </node>
+
+    <!-- show state machine -->
+    <!-- <node pkg="smach_viewer" type="smach_viewer.py" name="smach_viewer" output="screen" launch-prefix="gnome-terminal -e"/> -->
+        
+    
+    
+</launch>

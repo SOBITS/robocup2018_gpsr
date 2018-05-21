@@ -1,0 +1,21 @@
+<!--RoboCup 2018 GPSR-->
+<launch>
+
+    <!-- Microsoft text to speech -->
+    <include file="$(find picotts)/launch/picotts.launch"/>
+
+    <!-- main -->
+    <node pkg="gpsr" type="GPSR_test.py" name="GPSR" output="screen">
+	<rosparam command="load" file="$(find gpsr)/config/paramater_test.yaml"/>
+    </node>
+
+    <!-- show state machine -->
+    <node pkg="smach_viewer" type="smach_viewer.py" name="smach_viewer" output="screen" launch-prefix="gnome-terminal -e"/>
+        
+    <!-- google_speech_recognition -->
+    <include file="$(find google_speech_recognition)/launch/google_speech_recognition.launch" />
+    
+
+    
+    
+</launch>

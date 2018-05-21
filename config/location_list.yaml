@@ -1,0 +1,7 @@
+kitchen: [kitchen table, kitchen rack, cupboard]
+living_room: [living rack, living table, sofa]
+bed_room: [bed, side shelf]
+kids_room: [desk, book shelf]
+living room: [living rack, living table, sofa]
+bed room: [bed, side shelf]
+kids room: [desk, book shelf]
