@@ -1,4 +1,4 @@
-名前
+GPSR
 ====
 
 ## 作成者
@@ -6,7 +6,8 @@
 bigbasketball568@yahoo.co.jp
 
 ## 説明
-RoboCup@Home2018用のpackage類
+RoboCup@Home2018で使ったGPSRのsmach  
+
 
 ## 使い方
 $ roslaunch turtlebot_op minimal.launch  
