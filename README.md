@@ -1,21 +1,20 @@
-GPSR
+RoboCup@Home2018 GPSR 
 ====
 
-## 作成者
-大石康太  
-bigbasketball568@yahoo.co.jp
+## <作成者>
+Kouta Ohishi
 
-## 説明
+## <説明>
 RoboCup@Home2018で使ったGPSRのsmach  
 
 
-## 使い方
+## <使い方>
 $ roslaunch turtlebot_op minimal.launch  
 $ roslaunch gpsr op.launch  
 ($ roslaunch turtlebot_op view_model.launch)
 
-## インストール方法
+## <インストール方法>
 
 
-## 必要なもの
+## <必要なもの>
 
