@@ -9,8 +9,8 @@ RoboCup@Home2018で使ったGPSRのsmach
 
 
 ## <使い方>
-$ roslaunch gpsr op.launch ←　turtlebotに接続していないと動きません。
-$ roslaunch gpsr test.launch ←　ロボット無しでもで動きます
+$ roslaunch gpsr op.launch ←　turtlebotに接続していないと動きません。  
+$ roslaunch gpsr test.launch ←　ロボット無しでもで動きます。  
 
 
 ## <インストール方法>
